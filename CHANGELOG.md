@@ -1,0 +1,29 @@
+# Changelog
+
+All notable public-edition changes are recorded here.
+
+## [0.1.1] - 2026-08-23
+
+### Added
+
+- Verified synthetic demo screenshot and a two-minute reviewer path.
+- Cross-platform environment setup.
+- Enforced 80% coverage floor and distribution-package verification in CI.
+- Dependabot configuration for Python and GitHub Actions.
+- Focused contribution guidance, issue forms, and a pull-request checklist.
+
+### Changed
+
+- Security reporting now points directly to GitHub private vulnerability
+  reporting.
+
+## [0.1.0] - 2026-08-23
+
+### Added
+
+- Initial sanitized public reconstruction with normalized ingress, bounded and
+  deduplicated queue state, native server-sent events, an OBS-ready overlay,
+  tests, architecture notes, and a full-history secret scan.
+
+[0.1.1]: https://github.com/soin8293/live-music-request-orchestrator/releases/tag/v0.1.1
+[0.1.0]: https://github.com/soin8293/live-music-request-orchestrator/releases/tag/v0.1.0

@@ -50,7 +50,7 @@ def test_invalid_payload_is_safe_400() -> None:
     client = build_client()
     response = client.post("/ingest", json={"action": "request"})
     assert response.status_code == 400
-    assert response.get_json()["reason"] == "username is required"
+    assert response.get_json()["reason"] == "username_required"
 
 
 def test_reset_is_post_only_and_clears_state() -> None:

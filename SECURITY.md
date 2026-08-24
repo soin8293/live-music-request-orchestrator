@@ -6,8 +6,9 @@ Security fixes are applied to the latest release on `main`.
 
 ## Report a vulnerability
 
-Please use GitHub's private vulnerability-reporting feature. Do not open a
-public issue containing credentials, private event payloads, or personal data.
+Please use [GitHub private vulnerability reporting](https://github.com/soin8293/live-music-request-orchestrator/security/advisories/new).
+Do not open a public issue containing credentials, private event payloads, or
+personal data.
 
 ## Security model
 

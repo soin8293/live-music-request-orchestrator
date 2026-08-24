@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "live-music-request-orchestrator"
-version = "0.1.1"
+version = "0.1.2"
 description = "Local-first live-stream request controller with normalized ingress, deduplication, and an OBS-ready overlay."
 readme = "README.md"
 requires-python = ">=3.11"

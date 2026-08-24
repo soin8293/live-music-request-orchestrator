@@ -21,7 +21,7 @@ I designed and implemented the original private system end to end:
 - integrated and debugged a private playback-provider experiment; and
 - wrote operational handoffs, smoke checks, and failure matrices.
 
-This public repository is a clean reconstruction of those verified design
+This implementation is a clean reconstruction of those verified design
 ideas. It is not a dump of the private working directory.
 
 ## What made it difficult
@@ -34,10 +34,10 @@ ideas. It is not a dump of the private working directory.
   component owned canonical state.
 - Live troubleshooting required graceful degradation: HTTP polling remains a
   fallback when the live event stream reconnects.
-- Credentials, chat logs, and account-specific configuration could not become
-  part of a public history.
+- Credentials, chat logs, and account-specific configuration could not be
+  included in the released source.
 
-## Public reconstruction decisions
+## Portfolio adaptation decisions
 
 - Synthetic metadata replaces private provider calls.
 - State is memory-only and starts empty.

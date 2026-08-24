@@ -7,7 +7,7 @@ that inconsistency leak into queue logic. It also has to remain usable during
 connector reconnects and duplicate deliveries, while keeping the browser-source
 surface simple enough to debug during a live session.
 
-The public edition therefore separates five concerns:
+The implementation therefore separates five concerns:
 
 1. `ingress.py` converts supported payload shapes into `NormalizedCommand`.
 2. `store.py` owns every queue mutation and rejection decision.

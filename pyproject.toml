@@ -1,0 +1,71 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "live-music-request-orchestrator"
+version = "0.1.0"
+description = "Local-first live-stream request controller with normalized ingress, deduplication, and an OBS-ready overlay."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Sorbarikor Inene" }]
+keywords = ["live-streaming", "websocket", "flask", "obs", "event-driven", "queue"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+  "flask>=3.1,<4",
+  "python-dotenv>=1.1,<2",
+  "requests>=2.32,<3",
+  "websocket-client>=1.8,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.4,<9",
+  "pytest-cov>=6.2,<7",
+  "ruff>=0.12,<1",
+]
+
+[project.scripts]
+live-music-orchestrator = "live_music_orchestrator.app:main"
+live-music-bridge = "live_music_orchestrator.bridge:main"
+
+[project.urls]
+Homepage = "https://github.com/soin8293/live-music-request-orchestrator"
+Repository = "https://github.com/soin8293/live-music-request-orchestrator"
+Issues = "https://github.com/soin8293/live-music-request-orchestrator/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/live_music_orchestrator"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src",
+  "/tests",
+  "/docs",
+  "/scripts",
+  "/README.md",
+  "/LICENSE",
+  "/SECURITY.md",
+  "/NOTICE.md",
+  "/pyproject.toml",
+  "/.env.example",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q --strict-markers --disable-warnings"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF"]

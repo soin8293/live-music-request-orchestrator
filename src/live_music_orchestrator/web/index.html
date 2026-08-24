@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Live Music Request Orchestrator</title>
+    <meta name="description" content="A local-first live music request queue and browser-source overlay.">
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/styles.css">
+  </head>
+  <body>
+    <main class="shell" aria-labelledby="app-title">
+      <section class="device" aria-live="polite">
+        <div class="device__shine"></div>
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">LOCAL REQUEST CONTROLLER</p>
+            <h1 id="app-title">AUX//QUEUE</h1>
+          </div>
+          <div class="connection" id="connection-chip">
+            <span class="connection__dot"></span>
+            <span id="connection-label">CONNECTING</span>
+          </div>
+        </header>
+
+        <section class="now-playing" aria-labelledby="now-title">
+          <div class="art" id="now-art" aria-hidden="true">
+            <span>♫</span>
+          </div>
+          <div class="track-copy">
+            <p class="section-label">NOW PLAYING</p>
+            <h2 id="now-title">Waiting for a request</h2>
+            <p id="now-artist">Synthetic catalog ready</p>
+            <p class="requester" id="now-requester">No requester yet</p>
+          </div>
+          <div class="time" id="now-time">0:00</div>
+          <div class="progress" aria-hidden="true"><span id="now-progress"></span></div>
+        </section>
+
+        <section class="queue" aria-labelledby="queue-title">
+          <header class="queue__header">
+            <div>
+              <p class="section-label">UP NEXT</p>
+              <h2 id="queue-title">Request queue</h2>
+            </div>
+            <span class="counter" id="queue-count">0</span>
+          </header>
+          <ol id="queue-list" class="queue__list"></ol>
+          <p class="empty" id="queue-empty">Requests will appear here in real time.</p>
+        </section>
+
+        <footer class="footer">
+          <span>MOCK-FIRST</span>
+          <span id="revision-label">REV 0</span>
+          <span>LOCAL ONLY</span>
+        </footer>
+      </section>
+
+      <aside class="controls" id="controls" hidden>
+        <p class="eyebrow">LOCAL DEMO CONTROLS</p>
+        <form id="request-form">
+          <label for="demo-user">Viewer</label>
+          <input id="demo-user" name="user" value="demo_viewer" maxlength="64">
+          <label for="demo-song">Song request</label>
+          <input id="demo-song" name="song" value="Neon Skyline - Demo Artist" maxlength="180">
+          <button type="submit">Add request</button>
+        </form>
+        <div class="button-row">
+          <button type="button" id="skip-button">Skip</button>
+          <button type="button" id="reset-button" class="secondary">Reset</button>
+        </div>
+        <p id="control-status" role="status"></p>
+      </aside>
+    </main>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>

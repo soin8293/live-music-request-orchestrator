@@ -1,0 +1,11 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Ignore generated local environments and build artifacts"
+paths = [
+  '''(^|[\\/])\.venv[\\/]''',
+  '''(^|[\\/])venv[\\/]''',
+  '''(^|[\\/])dist[\\/]''',
+  '''(^|[\\/])build[\\/]''',
+]

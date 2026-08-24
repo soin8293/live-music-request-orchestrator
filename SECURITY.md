@@ -19,7 +19,7 @@ personal data.
 - Request bodies and user-controlled strings are bounded.
 - The overlay renders user-controlled values with DOM text APIs, not HTML.
 - Raw event payloads, chat text, and usernames are not written to logs.
-- State is in memory by default; this public edition does not persist viewer
+- State is in memory by default; this project does not persist viewer
   identities or request history.
 
 This is a local demonstration, not an internet-facing multi-tenant service.

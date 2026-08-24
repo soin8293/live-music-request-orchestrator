@@ -1,3 +1,8 @@
-"""Live Music Request Orchestrator public package."""
+"""Live Music Request Orchestrator package."""
 
-__version__ = "0.1.0"
+from importlib.metadata import PackageNotFoundError, version
+
+try:
+    __version__ = version("live-music-request-orchestrator")
+except PackageNotFoundError:  # pragma: no cover - supports direct source-tree imports
+    __version__ = "0.0.0+local"

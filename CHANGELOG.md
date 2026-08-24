@@ -1,6 +1,20 @@
 # Changelog
 
-All notable public-edition changes are recorded here.
+All notable changes are recorded here.
+
+## [0.1.2] - 2026-08-23
+
+### Documentation
+
+- Put the credential-free quick start and exact feature boundary at the top of
+  the README.
+- Added a complete setup guide covering release downloads, credentials, OBS,
+  TikFinity, configuration, and troubleshooting.
+
+### Fixed
+
+- Runtime health metadata now reads the installed package version instead of a
+  stale hard-coded value.
 
 ## [0.1.1] - 2026-08-23
 
@@ -23,9 +37,10 @@ All notable public-edition changes are recorded here.
 
 ### Added
 
-- Initial sanitized public reconstruction with normalized ingress, bounded and
+- Initial controller-and-overlay release with normalized ingress, bounded and
   deduplicated queue state, native server-sent events, an OBS-ready overlay,
   tests, architecture notes, and a full-history secret scan.
 
+[0.1.2]: https://github.com/soin8293/live-music-request-orchestrator/releases/tag/v0.1.2
 [0.1.1]: https://github.com/soin8293/live-music-request-orchestrator/releases/tag/v0.1.1
 [0.1.0]: https://github.com/soin8293/live-music-request-orchestrator/releases/tag/v0.1.0

@@ -1,3 +1,5 @@
+from importlib.metadata import version
+
 from live_music_orchestrator.app import create_app
 from live_music_orchestrator.config import Settings
 
@@ -24,6 +26,7 @@ def test_health_and_initial_state() -> None:
     health = client.get("/health")
     assert health.status_code == 200
     assert health.get_json()["mode"] == "synthetic"
+    assert health.get_json()["version"] == version("live-music-request-orchestrator")
     assert client.get("/api/state").get_json()["queue_length"] == 0
 
 

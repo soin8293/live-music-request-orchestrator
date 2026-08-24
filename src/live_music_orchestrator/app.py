@@ -102,7 +102,7 @@ def create_app(settings: Settings | None = None, store: QueueStore | None = None
                 request.get_json(silent=True), max_request_chars=settings.max_request_chars
             )
         except IngressError as exc:
-            return jsonify({"status": "error", "reason": str(exc)}), 400
+            return jsonify({"status": "error", "reason": exc.code.value}), 400
 
         if command.action == "request":
             result = store.request(command)

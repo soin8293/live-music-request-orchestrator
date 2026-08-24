@@ -16,6 +16,8 @@ All notable public-edition changes are recorded here.
 
 - Security reporting now points directly to GitHub private vulnerability
   reporting.
+- Ingress validation returns a closed set of public error codes instead of
+  exception text, resolving CodeQL's exception-exposure finding.
 
 ## [0.1.0] - 2026-08-23
 

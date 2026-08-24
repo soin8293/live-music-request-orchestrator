@@ -37,16 +37,17 @@ def test_normalizes_status_without_user() -> None:
 
 
 @pytest.mark.parametrize(
-    "payload, message",
+    "payload, code",
     [
-        ({}, "recognized request or skip action required"),
-        ({"action": "request", "command_params": "song"}, "username is required"),
+        ({}, "recognized_action_required"),
+        ({"action": "request", "command_params": "song"}, "username_required"),
         (
             {"action": "request", "username": "viewer", "command_params": "x" * 181},
-            "command_params exceeds 180 characters",
+            "command_params_too_long",
         ),
     ],
 )
-def test_rejects_invalid_payloads(payload: dict, message: str) -> None:
-    with pytest.raises(IngressError, match=message):
+def test_rejects_invalid_payloads(payload: dict, code: str) -> None:
+    with pytest.raises(IngressError) as exc_info:
         normalize_payload(payload)
+    assert exc_info.value.code.value == code

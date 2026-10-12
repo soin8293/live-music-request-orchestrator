@@ -10,7 +10,8 @@ from typing import Any
 
 import requests
 import websocket
-from dotenv import load_dotenv
+
+from live_music_orchestrator.config import load_configuration
 
 logger = logging.getLogger("live-music-bridge")
 
@@ -56,7 +57,7 @@ def command_payload(event: dict[str, Any]) -> dict[str, object] | None:
 
 
 def main() -> None:
-    load_dotenv()
+    load_configuration()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     ws_url = os.getenv("TIKFINITY_WS_URL", "ws://127.0.0.1:21213/")
     ingest_url = os.getenv("ORCHESTRATOR_INGEST_URL", "http://127.0.0.1:5000/ingest")

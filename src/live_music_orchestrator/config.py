@@ -4,8 +4,16 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
+from pathlib import Path
+
+from dotenv import load_dotenv
 
 LOOPBACK_HOSTS = {"127.0.0.1", "::1", "localhost"}
+
+
+def load_configuration() -> None:
+    """Load only the working directory's .env; process variables take precedence."""
+    load_dotenv(dotenv_path=Path.cwd() / ".env", override=False)
 
 
 def _positive_int(name: str, default: int) -> int:

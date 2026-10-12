@@ -8,6 +8,8 @@ import sys
 
 import requests
 
+from live_music_orchestrator.config import load_configuration
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -23,6 +25,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    load_configuration()
     args = parse_args()
     url = os.getenv("ORCHESTRATOR_INGEST_URL", "http://127.0.0.1:5000/ingest")
     token = os.getenv("ORCHESTRATOR_INGEST_TOKEN", "").strip()

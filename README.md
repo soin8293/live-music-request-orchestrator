@@ -12,6 +12,16 @@ stream music.
 
 ![CI](https://github.com/soin8293/live-music-request-orchestrator/actions/workflows/ci.yml/badge.svg)
 
+## Configuration and operation
+
+The installed controller, bridge and demo helper load `.env` from the directory
+where they are launched. Existing process environment variables take precedence;
+parent directories and package directories are not searched. Set
+`ORCHESTRATOR_INGEST_URL` to match a custom controller port for the bridge/helper.
+Token forwarding uses the same configuration rule. See
+[the operator pilot roadmap](docs/engineering-roadmap.md).
+
+
 ## Try it locally
 
 Requirements: Git and Python 3.11 or newer. No API keys are required.
@@ -179,6 +189,16 @@ environment-dependent and are not claimed as CI-verified.
 
 See the [changelog](CHANGELOG.md), [contribution guide](CONTRIBUTING.md),
 [provenance notice](NOTICE.md), and [complete setup guide](docs/setup.md).
+
+## AI assistance
+
+This repository includes work prepared with AI assistance, including
+documentation and maintenance contributions.
+
+The maintainer, soin8293, is responsible for project decisions and for reviewing
+and validating contributions. AI assistance does not establish correctness,
+security, or production readiness; consult the documented checks and
+limitations. Existing licenses and upstream credits remain applicable.
 
 ## License
 

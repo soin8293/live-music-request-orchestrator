@@ -6,8 +6,9 @@ import hmac
 import logging
 from pathlib import Path
 
-from dotenv import load_dotenv
 from flask import Flask, Response, abort, jsonify, request, send_from_directory, stream_with_context
+
+from live_music_orchestrator.config import load_configuration
 
 from . import __version__
 from .config import LOOPBACK_HOSTS, Settings
@@ -135,7 +136,7 @@ def create_app(settings: Settings | None = None, store: QueueStore | None = None
 
 
 def main() -> None:
-    load_dotenv()
+    load_configuration()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     settings = Settings.from_env()
     settings.validate_exposure()
